@@ -1,0 +1,26 @@
+[Unit]
+Description=Remote Ops Backend (远程安卓设备运维平台)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/remote-ops/backend
+Environment=NODE_ENV=production
+Environment=PORT=8787
+Environment=HOST=127.0.0.1
+# 注入脚本/Agent 使用的对外地址（走 HTTPS 加密）
+Environment=PUBLIC_BASE=https://43.251.226.134
+# 前端静态目录（要能读到 index.html 才能注入站点名）
+Environment=WEB_DIST=/opt/remote-ops/web
+ExecStart=/usr/local/bin/node src/server.js
+Restart=always
+RestartSec=3
+# 日志走 journald，用 journalctl -u remote-ops -f 查看
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=remote-ops
+
+[Install]
+WantedBy=multi-user.target

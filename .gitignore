@@ -1,0 +1,15 @@
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+.gradle/
+.kotlin/
+local.properties
+
+# 运行时数据（数据库、上传文件、密钥）
+backend/data/
+
+# 日志与临时文件
+*.log
+.DS_Store
+*.apk

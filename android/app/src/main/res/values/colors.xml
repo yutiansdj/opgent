@@ -1,0 +1,8 @@
+<resources>
+    <color name="brand">#1565C0</color>
+    <color name="brand_dark">#0D47A1</color>
+    <color name="brand_container">#D6E4FF</color>
+    <color name="ok_green">#2E7D32</color>
+    <color name="warn_red">#C62828</color>
+    <color name="muted">#666666</color>
+</resources>

@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 基础重置：preflight 已关闭，这里只补必要部分，避免影响 NaiveUI */
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui,
+    -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 细滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 页面通用容器 */
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 等宽代码/日志块，深浅色通用 */
+.code-block {
+  margin: 0;
+  padding: 12px;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  border-radius: 6px;
+  background: rgba(127, 127, 127, 0.08);
+  border: 1px solid rgba(127, 127, 127, 0.18);
+  color: inherit;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+}
+
+/* 设备状态小圆点 */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  flex: none;
+}
+.status-dot.online {
+  background: #18a058;
+  box-shadow: 0 0 0 3px rgba(24, 160, 88, 0.15);
+}
+.status-dot.offline {
+  background: #a0a0a0;
+  box-shadow: 0 0 0 3px rgba(160, 160, 160, 0.15);
+}
+
+/* 表格在小屏横向滚动 */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* 页面淡入过渡 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 列表/统计卡片：浅色下描边，深色下由 NaiveUI 变量接管，保持克制 */
+.page-card,
+.stat-card {
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* 登录页背景：极浅的渐变网格，保持企业风格 */
+.login-bg {
+  background-color: #f7f9fc;
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* 登录页深色背景 */
+.login-bg-dark {
+  background-color: #101014;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}

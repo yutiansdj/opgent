@@ -1,0 +1,19 @@
+{
+  "name": "remote-ops-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.18",
+    "app-info-parser": "^1.1.6",
+    "express": "^4.22.3",
+    "multer": "^2.4.0",
+    "sharp": "^0.35.5",
+    "ws": "^8.22.0"
+  }
+}
